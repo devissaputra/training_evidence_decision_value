@@ -1,15 +1,16 @@
 {
   "study_title": "Decision Value of Training Evidence: Reanalysis of the National Supported Work Experiment",
-  "design": "Secondary analysis of the randomized National Supported Work experimental sample",
+  "design": "Secondary analysis of the Dehejia-Wahba RE74 subset of the randomized National Supported Work experimental sample",
   "retrieved_for_analysis": "2026-09-25",
-  "source_name": "National Supported Work Demonstration — Dehejia-Wahba experimental sample",
+  "source_name": "National Supported Work Demonstration — Dehejia-Wahba RE74 experimental subset",
   "source_page": "https://users.nber.org/~rdehejia/nswdata2.html",
-  "direct_data_url": "https://www.nber.org/~rdehejia/data/nswre74_control.txt ; https://www.nber.org/~rdehejia/data/nswre74_treated.txt",
-  "doi": "",
-  "license_note": "NBER page permits attributable non-commercial use (CC BY-NC); this bundle stores derived statistics rather than raw participant records.",
+  "source_description": "The source page describes a further subset of LaLonde's NSW experimental data containing RE74 information: 185 treated observations and 260 randomized controls. Variables are treatment, age, education, Black, Hispanic, married, nodegree, RE74, RE75, and RE78.",
+  "outcome_note": "Published Dehejia-Wahba documentation describes RE78 as real earnings in 1978 measured in 1982 U.S. dollars.",
+  "license_note": "The NBER-hosted source page states that the data are distributed for attributable non-commercial use (CC BY-NC). The repository stores derived statistics rather than raw participant records.",
   "raw_data_redistributed": false,
   "derived_empirical_results_in_repository": true,
-  "claim_boundary": "This is a historical job-training experiment in a specific population and period. Randomization supports a causal effect for that experimental setting, but transport to modern corporate L&D requires separate justification. Bootstrap exceedance fractions are not Bayesian posterior probabilities.",
+  "source_files": {},
+  "claim_boundary": "Randomization supports a causal treated-control contrast for this historical experimental subset, subject to the original study design. The threshold frontier uses illustrative historical-dollar minimum-benefit scenarios, not observed program costs or validated modern corporate L&D break-even values. Transport to modern corporate training requires separate evidence.",
   "repository_slug": "training_evidence_decision_value",
   "supersedes_prototype_slug": "ld_evidence_value"
 }
