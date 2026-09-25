@@ -10,6 +10,25 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 EXPECTED_SOURCE_ROWS = {"control": 260, "treated": 185}
+EXPECTED_SOURCE_SHA256 = {
+    "control": "a1364cea459d953dc691a667d99194b4ad335d6d550354fe23a5d2dc58d729b5",
+    "treated": "e7b742fe0ff07a0f45e129b4ff108bb9611cd83d53604732c48a8a0a3e20eda3",
+}
+EXPECTED_HEADLINE = {
+    "n_control": 260,
+    "n_treated": 185,
+    "control_mean_re78_1982_usd": 4554.8,
+    "treated_mean_re78_1982_usd": 6349.14,
+    "difference_re78_1982_usd": 1794.34,
+    "welch_standard_error_1982_usd": 671.0,
+    "normal95_low_1982_usd": 479.19,
+    "normal95_high_1982_usd": 3109.5,
+    "bootstrap95_low_1982_usd": 519.04,
+    "bootstrap95_high_1982_usd": 3117.8,
+    "bootstrap_positive_fraction": 0.9978,
+    "bootstrap_exceedance_gt_2000": 0.3818,
+    "permutation_two_sided_p": 0.005899,
+}
 EXPECTED_COLUMNS = 10
 BOOTSTRAP_SEED = 20260925
 BOOTSTRAP_RESAMPLES = 5000
@@ -159,6 +178,16 @@ def validate_bundle():
             return False
         sha = str(item.get("sha256", ""))
         if len(sha) != 64 or any(ch not in "0123456789abcdef" for ch in sha):
+            return False
+        if sha != EXPECTED_SOURCE_SHA256[key]:
+            return False
+
+    for key, expected in EXPECTED_HEADLINE.items():
+        actual = metrics.get(key)
+        if isinstance(expected, float):
+            if actual is None or abs(float(actual) - expected) > 5e-5:
+                return False
+        elif actual != expected:
             return False
 
     expected_core = {
