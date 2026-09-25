@@ -1,0 +1,14 @@
+metric,value
+n_control,260
+n_treated,185
+control_mean_re78_1982_usd,4554.8
+treated_mean_re78_1982_usd,6349.14
+difference_re78_1982_usd,1794.34
+welch_standard_error_1982_usd,671.0
+normal95_low_1982_usd,479.19
+normal95_high_1982_usd,3109.5
+bootstrap95_low_1982_usd,519.04
+bootstrap95_high_1982_usd,3117.8
+bootstrap_positive_fraction,0.9978
+bootstrap_exceedance_gt_2000,0.3818
+permutation_two_sided_p,0.005899

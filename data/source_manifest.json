@@ -9,7 +9,22 @@
   "license_note": "The NBER-hosted source page states that the data are distributed for attributable non-commercial use (CC BY-NC). The repository stores derived statistics rather than raw participant records.",
   "raw_data_redistributed": false,
   "derived_empirical_results_in_repository": true,
-  "source_files": {},
+  "source_files": {
+    "control": {
+      "url": "https://users.nber.org/~rdehejia/data/nswre74_control.txt",
+      "rows": 260,
+      "columns": 10,
+      "sha256": "a1364cea459d953dc691a667d99194b4ad335d6d550354fe23a5d2dc58d729b5",
+      "treatment_indicator": 0
+    },
+    "treated": {
+      "url": "https://users.nber.org/~rdehejia/data/nswre74_treated.txt",
+      "rows": 185,
+      "columns": 10,
+      "sha256": "e7b742fe0ff07a0f45e129b4ff108bb9611cd83d53604732c48a8a0a3e20eda3",
+      "treatment_indicator": 1
+    }
+  },
   "claim_boundary": "Randomization supports a causal treated-control contrast for this historical experimental subset, subject to the original study design. The threshold frontier uses illustrative historical-dollar minimum-benefit scenarios, not observed program costs or validated modern corporate L&D break-even values. Transport to modern corporate training requires separate evidence.",
   "repository_slug": "training_evidence_decision_value",
   "supersedes_prototype_slug": "ld_evidence_value"

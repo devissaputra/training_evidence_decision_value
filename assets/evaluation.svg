@@ -1,1 +1,18 @@
-<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540"><ns0:rect width="100%" height="100%" fill="white" /><ns0:text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Training Evidence Decision Value — Evidence Boundary</ns0:text><ns0:rect x="55" y="95" width="1090" height="170" rx="18" fill="#f6f6f6" stroke="#333" /><ns0:text x="85" y="133" font-family="Arial" font-size="20" font-weight="700">Empirical finding</ns0:text><ns0:text x="85" y="167" font-family="Arial" font-size="16">The observed randomized difference in 1978 earnings is $1,794.34. The seeded bootstrap 95% resampling interval</ns0:text><ns0:text x="85" y="191" font-family="Arial" font-size="16">is about $501–$3,097. The bootstrap exceedance fraction is 0.36 at a $2,000 threshold and falls to 0.035 at</ns0:text><ns0:text x="85" y="215" font-family="Arial" font-size="16">$3,000, illustrating the dependence of evidence interpretation on the decision threshold.</ns0:text><ns0:rect x="55" y="300" width="1090" height="170" rx="18" fill="#f6f6f6" stroke="#333" /><ns0:text x="85" y="338" font-family="Arial" font-size="20" font-weight="700">Claim boundary</ns0:text><ns0:text x="85" y="372" font-family="Arial" font-size="16">This is a historical job-training experiment in a specific population and period. Randomization supports a</ns0:text><ns0:text x="85" y="396" font-family="Arial" font-size="16">causal effect for that experimental setting, but transport to modern corporate L&amp;D requires separate</ns0:text><ns0:text x="85" y="420" font-family="Arial" font-size="16">justification. Bootstrap exceedance fractions are not Bayesian posterior probabilities.</ns0:text></ns0:svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="590" viewBox="0 0 1200 590">
+<rect width="1200" height="590" fill="white"/>
+<text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Training Evidence Decision Value — Evidence Boundary</text>
+<g font-family="Arial">
+<rect x="55" y="95" width="1090" height="220" rx="18" fill="#f6f6f6" stroke="#333"/>
+<text x="85" y="135" font-size="20" font-weight="700">Released evidence</text>
+<text x="85" y="170" font-size="16">Observed RE78 difference: 1,794.34 historical 1982 U.S. dollars.</text>
+<text x="85" y="198" font-size="16">Large-sample 95% interval: 479.19 to 3,109.50.</text>
+<text x="85" y="226" font-size="16">Bootstrap 95% percentile interval: 519.04 to 3,117.80.</text>
+<text x="85" y="254" font-size="16">Two-sided treatment-label permutation diagnostic p = 0.005899.</text>
+<text x="85" y="282" font-size="16">Dense frontier: 0–4,000 by 100; 50% exceedance frontier reaches 1,700.</text>
+<rect x="55" y="350" width="1090" height="160" rx="18" fill="#f6f6f6" stroke="#333"/>
+<text x="85" y="390" font-size="20" font-weight="700">Claim boundary</text>
+<text x="85" y="425" font-size="16">Thresholds are illustrative scenarios, not observed program costs or modern L&amp;D break-even values.</text>
+<text x="85" y="453" font-size="16">Bootstrap exceedance fractions are not posterior probabilities; the label permutation is a diagnostic, not exact design reconstruction.</text>
+<text x="85" y="481" font-size="16">Transport from this historical program and population to modern corporate training requires separate evidence.</text>
+</g>
+</svg>
