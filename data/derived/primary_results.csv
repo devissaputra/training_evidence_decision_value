@@ -1,0 +1,7 @@
+minimum_gain_threshold,bootstrap_exceedance_fraction
+500,0.975
+1000,0.887
+1500,0.66
+2000,0.36
+2500,0.14
+3000,0.035

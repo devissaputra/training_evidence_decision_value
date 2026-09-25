@@ -1,0 +1,19 @@
+{
+  "study": "Decision Value of Training Evidence: Reanalysis of the National Supported Work Experiment",
+  "headline_metrics": {
+    "n_control": 260,
+    "n_treated": 185,
+    "control_mean_re78": 4554.8,
+    "treated_mean_re78": 6349.14,
+    "difference_re78": 1794.34,
+    "normal_ci_low": 479.19,
+    "normal_ci_high": 3109.5,
+    "bootstrap_ci_low": 501.05,
+    "bootstrap_ci_high": 3096.7,
+    "bootstrap_positive_exceedance_fraction": 0.997,
+    "bootstrap_exceedance_fraction_gt_2000": 0.36
+  },
+  "finding": "The observed randomized difference in 1978 earnings is $1,794.34. A seeded nonparametric bootstrap gives a 95% resampling interval of about $501\u2013$3,097. Only 36% of bootstrap resamples exceed a $2,000 minimum-gain threshold; this is a bootstrap exceedance fraction, not a Bayesian posterior probability.",
+  "source": "National Supported Work Demonstration \u2014 Dehejia-Wahba experimental sample",
+  "retrieved": "2026-09-25"
+}

@@ -1,0 +1,10 @@
+[project]
+name = "training-evidence-decision-value"
+version = "1.0.0"
+description = "Decision-threshold reanalysis of randomized National Supported Work training evidence."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
