@@ -1,21 +1,30 @@
 # Research Design
 
-## Research question
-How does the decision interpretation of randomized training evidence change as the minimum economically meaningful earnings gain changes?
+## Question
+How does decision interpretation change as the required minimum earnings gain rises?
 
 ## Design
-Secondary analysis of the randomized National Supported Work experimental sample.
+Secondary analysis of a historical randomized training-program benchmark.
 
-## Source and unit of analysis
-Source: National Supported Work Demonstration — Dehejia-Wahba experimental sample. The operational unit follows the public dataset and is documented in `data/source_manifest.json` and `docs/data_dictionary.md`.
+## Sample
+The analysis uses the Dehejia–Wahba RE74 subset of the NSW experiment: 185 treated and 260 randomized controls.
 
-## Hypotheses
-1. H1: the randomized treated group has higher mean 1978 earnings than the randomized control group in this sample.
-2. H2: uncertainty around the mean difference is material relative to plausible implementation thresholds.
-3. H3: bootstrap exceedance fractions fall as the minimum-gain threshold rises, so statistical evidence and decision sufficiency are not the same question.
+## Outcome
+RE78, documented in the source literature as real 1978 earnings in 1982 U.S. dollars.
 
-## Method
-Compute the randomized treated-minus-control difference in 1978 earnings, a transparent large-sample normal interval, and a seeded 5,000-resample nonparametric bootstrap. For thresholds from $500 to $3,000, report the fraction of bootstrap resamples whose difference exceeds each threshold. Those fractions are resampling diagnostics, not posterior probabilities.
+## Estimand
+Unadjusted average difference in RE78 between randomized treated and control observations in the subset.
+
+## Uncertainty
+- Welch standard error;
+- large-sample normal interval;
+- within-group nonparametric bootstrap;
+- treatment-label permutation robustness diagnostic.
+
+## Decision layer
+A dense grid of hypothetical minimum-benefit thresholds is applied after estimating the effect. The observed estimate is not re-fitted for each threshold.
+
+The bootstrap exceedance curve summarizes how often resampled differences clear each threshold. It is a frequentist resampling diagnostic and not a posterior probability.
 
 ## Validity boundary
-This is a historical job-training experiment in a specific population and period. Randomization supports a causal effect for that experimental setting, but transport to modern corporate L&D requires separate justification. Bootstrap exceedance fractions are not Bayesian posterior probabilities.
+Randomization supports the historical experimental comparison, but the subset, period, intervention, labor market, monetary units, and implementation economics differ from modern corporate L&D. Generalization requires separate evidence.

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this empirical research bundle, cite this repository and the primary dataset/source documented in docs/references.md."
+message: "If you use this empirical research bundle, cite this repository and the primary NSW sources documented in docs/references.md."
 title: "Decision Value of Training Evidence: Reanalysis of the National Supported Work Experiment"
 type: software
 authors:
@@ -10,9 +10,10 @@ license: MIT
 repository-code: "https://github.com/devissaputra/training_evidence_decision_value"
 keywords:
   - learning-development
-  - program-evaluation
+  - training-evaluation
   - randomized-experiment
-  - bootstrap
   - decision-analysis
+  - bootstrap
+  - permutation-test
   - empirical-study
   - reproducible-research

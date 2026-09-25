@@ -1,73 +1,122 @@
 # Decision Value of Training Evidence: Reanalysis of the National Supported Work Experiment
 
-> **Empirical Research Bundle** · **Portfolio Track: Learning & Development Research** · Training Evaluation / Decision Analysis / Evidence-Based L&D
+[![CI](https://github.com/devissaputra/training_evidence_decision_value/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/training_evidence_decision_value/actions/workflows/ci.yml)
+[![Empirical rebuild](https://github.com/devissaputra/training_evidence_decision_value/actions/workflows/empirical-rebuild.yml/badge.svg)](https://github.com/devissaputra/training_evidence_decision_value/actions/workflows/empirical-rebuild.yml)
 
-Secondary reanalysis of the randomized National Supported Work experiment linking treatment-effect uncertainty to minimum-gain decision thresholds.
+> **Empirical Research Bundle** · **Learning & Development Research** · Training Evaluation / Decision Analysis / Experimental Evidence
+
+Secondary reanalysis of the **Dehejia–Wahba RE74 subset** of the randomized National Supported Work experiment. The study asks how the interpretation of a fixed experimental earnings effect changes when a decision maker imposes increasingly demanding **illustrative minimum-benefit thresholds**.
 
 ![Empirical workflow](assets/architecture.svg)
 
-## Study status
-
-**Completed secondary empirical analysis.** Reported findings were calculated from the named public source on 25 September 2026. The rebuild script contains **no synthetic fallback**. Raw source data are not republished unless source terms permit it; `data/source_manifest.json` records provenance, retrieval details, licensing notes, and the claim boundary.
-
 ## Research question
 
-> How does the decision interpretation of randomized training evidence change as the minimum economically meaningful earnings gain changes?
+> How does the interpretation of randomized training evidence change as an illustrative minimum economically meaningful earnings gain becomes more demanding?
 
-## Design
+## Source and sample
 
-- **Design:** Secondary analysis of the randomized National Supported Work experimental sample
-- **Source:** National Supported Work Demonstration — Dehejia-Wahba experimental sample
-- **Source page:** https://users.nber.org/~rdehejia/nswdata2.html
-- **Direct data endpoint:** `https://www.nber.org/~rdehejia/data/nswre74_control.txt ; https://www.nber.org/~rdehejia/data/nswre74_treated.txt`
-- **Retrieval / analysis date:** 2026-09-25
-- **Licensing / reuse note:** NBER page permits attributable non-commercial use (CC BY-NC); this bundle stores derived statistics rather than raw participant records.
+The source page identifies this as a further subset of LaLonde's National Supported Work experimental sample containing RE74 information:
+
+- **185 treated observations**
+- **260 randomized controls**
+- 10 columns in each row
+- variables: treatment, age, education, Black, Hispanic, married, nodegree, RE74, RE75, RE78
+- **RE78 is the outcome**
+
+Published Dehejia–Wahba documentation describes RE78 as **real 1978 earnings expressed in 1982 U.S. dollars**.
+
+This repository therefore does **not** treat the dollar values as current purchasing power or as modern corporate L&D benefit values.
+
+## Pinned source files
+
+| File | Rows | SHA-256 |
+|---|---:|---|
+| control | 260 | `a1364cea459d953dc691a667d99194b4ad335d6d550354fe23a5d2dc58d729b5` |
+| treated | 185 | `e7b742fe0ff07a0f45e129b4ff108bb9611cd83d53604732c48a8a0a3e20eda3` |
+
+The raw participant files are downloaded only during reproducibility runs and are **not redistributed** in this repository.
 
 ## Hypotheses
 
-1. H1: the randomized treated group has higher mean 1978 earnings than the randomized control group in this sample.
-2. H2: uncertainty around the mean difference is material relative to plausible implementation thresholds.
-3. H3: bootstrap exceedance fractions fall as the minimum-gain threshold rises, so statistical evidence and decision sufficiency are not the same question.
+1. **H1:** the treated group has higher mean RE78 than the randomized control group in this experimental subset.
+2. **H2:** uncertainty around the treated-minus-control difference is material relative to increasingly demanding minimum-benefit scenarios.
+3. **H3:** bootstrap exceedance fractions decline monotonically as the illustrative threshold rises.
 
-## Empirical method
+These hypotheses concern this historical experimental subset and the repository's decision-threshold operationalization. They do not establish modern corporate training ROI.
 
-Compute the randomized treated-minus-control difference in 1978 earnings, a transparent large-sample normal interval, and a seeded 5,000-resample nonparametric bootstrap. For thresholds from $500 to $3,000, report the fraction of bootstrap resamples whose difference exceeds each threshold. Those fractions are resampling diagnostics, not posterior probabilities.
+## Method
+
+The analysis reports four layers:
+
+1. **Observed experimental contrast:** treated minus control mean RE78.
+2. **Large-sample uncertainty:** Welch standard error and a 95% normal interval.
+3. **Resampling uncertainty:** seeded 5,000-resample nonparametric bootstrap and percentile interval.
+4. **Experimental-design robustness diagnostic:** seeded 10,000 treatment-label permutations under exchangeability.
+
+The permutation result is a robustness diagnostic. It is **not** presented as exact reconstruction of the original NSW randomization procedure.
 
 ![Method](assets/method.svg)
 
-## Headline empirical finding
+## Main empirical results
 
-The observed randomized difference in 1978 earnings is $1,794.34. The seeded bootstrap 95% resampling interval is about $501–$3,097. The bootstrap exceedance fraction is 0.36 at a $2,000 threshold and falls to 0.035 at $3,000, illustrating the dependence of evidence interpretation on the decision threshold.
+| Metric | Result |
+|---|---:|
+| Control mean RE78 | 4,554.80 |
+| Treated mean RE78 | 6,349.14 |
+| Treated − control | **1,794.34** |
+| Welch standard error | 671.00 |
+| Large-sample 95% interval | 479.19 to 3,109.50 |
+| Bootstrap 95% percentile interval | 519.04 to 3,117.80 |
+| Bootstrap fraction above zero | 0.9978 |
+| Bootstrap fraction above 2,000 | 0.3818 |
+| Two-sided label-permutation diagnostic p | 0.005899 |
 
-### Headline metrics
+All monetary values in the table are **historical 1982 U.S. dollars** as defined in the source literature.
 
-- **n control**: 260
-- **n treated**: 185
-- **control mean re78**: 4554.8
-- **treated mean re78**: 6349.14
-- **difference re78**: 1794.34
-- **normal ci low**: 479.19
-- **normal ci high**: 3109.5
-- **bootstrap ci low**: 501.05
-- **bootstrap ci high**: 3096.7
-- **bootstrap positive exceedance fraction**: 0.997
-- **bootstrap exceedance fraction gt 2000**: 0.36
+## Dense decision-threshold frontier
 
-The packaged derived tables are documented in `docs/data_dictionary.md`. That document states explicitly whether each CSV is a complete analysis table or a diagnostic subset.
+The released frontier spans **0 to 4,000 in 100-dollar increments**. For every threshold it reports:
 
-![Research evidence](assets/research_design.svg)
+- the observed point-estimate headroom: effect minus threshold;
+- the fraction of bootstrap resamples whose treatment difference exceeds that threshold.
 
-## What this study can and cannot claim
+Selected diagnostics:
 
-**Can claim:** the computations in this repository summarize the named public dataset under the documented operationalization.
+- bootstrap exceedance remains at least **0.95** through a threshold of **700**
+- at least **0.80** through **1,200**
+- at least **0.50** through **1,700**
+- at least **0.20** through **2,300**
+- at least **0.05** through **2,900**
 
-**Cannot claim:** This is a historical job-training experiment in a specific population and period. Randomization supports a causal effect for that experimental setting, but transport to modern corporate L&D requires separate justification. Bootstrap exceedance fractions are not Bayesian posterior probabilities.
+These are **resampling frontier diagnostics**, not posterior probabilities of implementation success.
 
-![Finding and boundary](assets/evaluation.svg)
+![Decision frontier](assets/research_design.svg)
+
+## Why the thresholds are illustrative
+
+The repository does **not** contain:
+
+- observed NSW program delivery cost per participant;
+- a corporate L&D implementation budget;
+- a validated modern break-even rule;
+- an inflation-adjusted conversion to current dollars;
+- a utility function converting earnings into organizational value.
+
+Therefore the threshold grid is a sensitivity device: it asks, *“How much of the resampled treatment-effect distribution clears a hypothetical minimum gain?”* It does not claim that 500, 2,000, or any other threshold is an economically correct adoption rule.
+
+## What the study can claim
+
+The historical randomized comparison supports a causal treatment contrast for this experimental setting, subject to the original study design and this reduced RE74-available subset. The repository can also show how that estimated effect looks under alternative illustrative minimum-benefit thresholds.
+
+## What the study cannot claim
+
+The repository does not establish that the same effect would occur in contemporary corporate L&D, another population, another labor market, or current dollars. The threshold curve does not estimate ROI, expected profit, implementation probability, or a Bayesian posterior probability.
+
+![Evidence boundary](assets/evaluation.svg)
 
 ## Reproduce
 
-Offline verification of packaged empirical results:
+Offline verification:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -75,27 +124,35 @@ pytest -q
 python run_demo.py
 ```
 
-Recompute the empirical analysis from the public source (internet required):
+Verify pinned source files and recompute:
 
 ```bash
 python scripts/fetch_and_analyze.py
 ```
 
-The online rebuild calls study-specific functions from `research/model.py`; the tests exercise those functions and scientific invariants rather than only checking file presence.
+Regenerate the full released evidence:
 
-## Research bundle contents
+```bash
+python scripts/fetch_and_analyze.py --write
+```
 
-- `README.md` — study overview and bounded findings
-- `EMPIRICAL_STUDY.md` — protocol, validity, and interpretation
-- `data/source_manifest.json` — provenance, license note, and claim boundary
-- `data/derived/` — compact derived empirical tables
-- `results/empirical_summary.json` — machine-readable headline results
-- `scripts/fetch_and_analyze.py` — public-source rebuild
-- `research/model.py` — reusable study-specific analysis functions
-- `tests/` — behavioral and scientific-invariant tests
-- `docs/` — analysis plan, data dictionary, paper blueprint, references, originality map
-- `assets/` — four study-specific SVG figures
+The empirical rebuild workflow downloads both pinned source files, regenerates all derived tables and figures, runs the tests, and passes only when the working tree has **zero evidence diff**.
+
+## Evidence files
+
+- `data/derived/primary_results.csv` — complete 41-point threshold frontier
+- `data/derived/secondary_results.csv` — core estimates and uncertainty metrics
+- `data/derived/robustness_results.csv` — resampling configuration and frontier-crossing diagnostics
+- `results/empirical_summary.json` — machine-readable release summary
+- `data/source_manifest.json` — source definitions, row counts, treatment flags, and SHA-256 fingerprints
+- `scripts/fetch_and_analyze.py` — complete source-to-output pipeline
+- `research/model.py` — reusable statistical functions and release validation
+- `tests/` — numerical, provenance, reproducibility, and consistency tests
+
+## Licensing and attribution
+
+Repository code and original documentation are MIT licensed. The NBER-hosted data page states that the data are distributed for **attributable non-commercial use (CC BY-NC)**. See [THIRD_PARTY_DATA.md](THIRD_PARTY_DATA.md).
 
 ## Research integrity
 
-This bundle distinguishes **source data**, **operationalization**, **result**, and **interpretation**. The analysis plan documents the released analysis; it is **not described as preregistered**. Public data do not automatically validate a construct, so proxy and external-validity limits are explicit.
+This is a secondary reanalysis of historical public experimental data. It is **not preregistered, peer reviewed as a new study, a modern ROI study, or a replication of the original assignment mechanism**. The repository separates source evidence, statistical uncertainty, resampling diagnostics, threshold scenarios, and interpretation.
