@@ -1,15 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="550" viewBox="0 0 1200 550">
-<rect width="1200" height="550" fill="white"/>
-<text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Training Evidence Decision Value — Method</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect width="1200" height="675" fill="#F7FAFC"/>
+<rect x="0" y="0" width="1200" height="92" fill="#17324D"/>
+<text x="52" y="42" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">Evidence Processing Pipeline</text>
+<text x="52" y="70" font-family="Arial, sans-serif" font-size="16" fill="#D8E7F2">From pinned randomized NSW records to a bounded L&amp;D decision-threshold analysis</text>
+
 <g font-family="Arial">
-<text x="70" y="125" font-size="20" font-weight="700">1. Historical experimental benchmark</text>
-<text x="90" y="155" font-size="16">Use the Dehejia–Wahba RE74 subset: 185 randomized treated observations and 260 randomized controls.</text>
-<text x="70" y="215" font-size="20" font-weight="700">2. Estimate RE78 difference</text>
-<text x="90" y="245" font-size="16">RE78 is real 1978 earnings measured in 1982 U.S. dollars in the source documentation.</text>
-<text x="70" y="305" font-size="20" font-weight="700">3. Characterize uncertainty</text>
-<text x="90" y="335" font-size="16">Welch standard error + large-sample normal interval + seeded percentile bootstrap + label-permutation diagnostic.</text>
-<text x="70" y="395" font-size="20" font-weight="700">4. Map evidence to illustrative thresholds</text>
-<text x="90" y="425" font-size="16">Generate a 0–4,000 frontier in 100-dollar increments; report point-estimate headroom and bootstrap exceedance.</text>
-<text x="90" y="465" font-size="14">Thresholds are scenarios, not observed training costs or validated modern corporate L&amp;D break-even values.</text>
+<rect x="48" y="128" width="205" height="122" rx="16" fill="#E8F3F8" stroke="#2F6F8F" stroke-width="2"/>
+<text x="68" y="157" font-size="14" font-weight="700" fill="#214E68">1 · SOURCE</text>
+<text x="68" y="188" font-size="18" font-weight="700" fill="#17324D">RE74 subset</text>
+<text x="68" y="216" font-size="14" fill="#4A5C68">185 treated</text>
+<text x="68" y="238" font-size="14" fill="#4A5C68">260 randomized controls</text>
+
+<rect x="280" y="128" width="205" height="122" rx="16" fill="#EEF2F6" stroke="#8294A3" stroke-width="2"/>
+<text x="300" y="157" font-size="14" font-weight="700" fill="#566A78">2 · VALIDATE</text>
+<text x="300" y="188" font-size="18" font-weight="700" fill="#17324D">Pinned provenance</text>
+<text x="300" y="216" font-size="14" fill="#4A5C68">SHA-256 + row counts</text>
+<text x="300" y="238" font-size="14" fill="#4A5C68">10-column schema + treatment flags</text>
+
+<rect x="512" y="128" width="205" height="122" rx="16" fill="#EAF6F1" stroke="#3D8B72" stroke-width="2"/>
+<text x="532" y="157" font-size="14" font-weight="700" fill="#2E6B58">3 · ESTIMATE</text>
+<text x="532" y="188" font-size="18" font-weight="700" fill="#17324D">RE78 contrast</text>
+<text x="532" y="216" font-size="14" fill="#4A5C68">treated mean − control mean</text>
+<text x="532" y="238" font-size="14" font-weight="700" fill="#17324D">+$1,794.34</text>
+
+<rect x="744" y="128" width="205" height="122" rx="16" fill="#FFF5E8" stroke="#D88B31" stroke-width="2"/>
+<text x="764" y="157" font-size="14" font-weight="700" fill="#9A5A15">4 · UNCERTAINTY</text>
+<text x="764" y="188" font-size="18" font-weight="700" fill="#17324D">Three diagnostics</text>
+<text x="764" y="216" font-size="14" fill="#4A5C68">Welch interval · bootstrap</text>
+<text x="764" y="238" font-size="14" fill="#4A5C68">label-permutation diagnostic</text>
+
+<rect x="976" y="128" width="176" height="122" rx="16" fill="#FDEEEE" stroke="#C45A4A" stroke-width="2"/>
+<text x="996" y="157" font-size="14" font-weight="700" fill="#9A3B30">5 · DECISION LAYER</text>
+<text x="996" y="188" font-size="18" font-weight="700" fill="#17324D">41 thresholds</text>
+<text x="996" y="216" font-size="14" fill="#4A5C68">$0–$4,000 by $100</text>
+<text x="996" y="238" font-size="14" fill="#4A5C68">headroom + exceedance</text>
+
+<g stroke="#567080" stroke-width="2.5" fill="none">
+<line x1="253" y1="189" x2="280" y2="189"/><polyline points="270,181 280,189 270,197"/>
+<line x1="485" y1="189" x2="512" y2="189"/><polyline points="502,181 512,189 502,197"/>
+<line x1="717" y1="189" x2="744" y2="189"/><polyline points="734,181 744,189 734,197"/>
+<line x1="949" y1="189" x2="976" y2="189"/><polyline points="966,181 976,189 966,197"/>
+</g>
+
+<text x="50" y="305" font-size="20" font-weight="700" fill="#17324D">Released evidence layers</text>
+
+<rect x="48" y="332" width="340" height="155" rx="16" fill="#FFFFFF" stroke="#B8C6D1"/>
+<text x="70" y="363" font-size="15" font-weight="700" fill="#2563A5">A · EFFECT + INTERVALS</text>
+<text x="70" y="397" font-size="15" fill="#17324D">Normal 95%: $479–$3,110</text>
+<text x="70" y="425" font-size="15" fill="#17324D">Bootstrap 95%: $519–$3,118</text>
+<text x="70" y="453" font-size="15" fill="#17324D">Bootstrap effect &gt; 0: 99.78%</text>
+
+<rect x="430" y="332" width="340" height="155" rx="16" fill="#FFFFFF" stroke="#B8C6D1"/>
+<text x="452" y="363" font-size="15" font-weight="700" fill="#3D8B72">B · FRONTIER</text>
+<text x="452" y="397" font-size="15" fill="#17324D">≥95% exceedance through $700</text>
+<text x="452" y="425" font-size="15" fill="#17324D">≥50% exceedance through $1,700</text>
+<text x="452" y="453" font-size="15" fill="#17324D">38.18% exceed $2,000</text>
+
+<rect x="812" y="332" width="340" height="155" rx="16" fill="#FFFFFF" stroke="#B8C6D1"/>
+<text x="834" y="363" font-size="15" font-weight="700" fill="#C45A4A">C · ROBUSTNESS</text>
+<text x="834" y="397" font-size="15" fill="#17324D">5,000 bootstrap resamples</text>
+<text x="834" y="425" font-size="15" fill="#17324D">10,000 label permutations</text>
+<text x="834" y="453" font-size="15" fill="#17324D">two-sided diagnostic p = 0.005899</text>
+
+<rect x="48" y="526" width="1104" height="101" rx="16" fill="#17324D"/>
+<text x="72" y="558" font-size="16" font-weight="700" fill="#FFFFFF">L&amp;D interpretation rule</text>
+<text x="72" y="585" font-size="14" fill="#D8E7F2">Use the experiment to distinguish “positive evidence” from “evidence strong enough to clear a chosen minimum-benefit scenario.”</text>
+<text x="72" y="609" font-size="14" fill="#D8E7F2">Do not reinterpret the historical thresholds as observed program costs, modern ROI, or current-dollar business cases.</text>
 </g>
 </svg>
