@@ -1,18 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="590" viewBox="0 0 1200 590">
-<rect width="1200" height="590" fill="white"/>
-<text x="50" y="55" font-family="Arial" font-size="29" font-weight="700">Training Evidence Decision Value — Evidence Boundary</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect width="1200" height="675" fill="#F7FAFC"/>
+<rect x="0" y="0" width="1200" height="88" fill="#17324D"/>
+<text x="52" y="39" font-family="Arial" font-size="29" font-weight="700" fill="#FFFFFF">Evidence Boundary for L&amp;D Decisions</text>
+<text x="52" y="67" font-family="Arial" font-size="16" fill="#D8E7F2">What the experiment supports — and what a modern training decision would still need</text>
 <g font-family="Arial">
-<rect x="55" y="95" width="1090" height="220" rx="18" fill="#f6f6f6" stroke="#333"/>
-<text x="85" y="135" font-size="20" font-weight="700">Released evidence</text>
-<text x="85" y="170" font-size="16">Observed RE78 difference: 1,794.34 historical 1982 U.S. dollars.</text>
-<text x="85" y="198" font-size="16">Large-sample 95% interval: 479.19 to 3,109.50.</text>
-<text x="85" y="226" font-size="16">Bootstrap 95% percentile interval: 519.04 to 3,117.80.</text>
-<text x="85" y="254" font-size="16">Two-sided treatment-label permutation diagnostic p = 0.005899.</text>
-<text x="85" y="282" font-size="16">Dense frontier: 0–4,000 by 100; 50% exceedance frontier reaches 1,700.</text>
-<rect x="55" y="350" width="1090" height="160" rx="18" fill="#f6f6f6" stroke="#333"/>
-<text x="85" y="390" font-size="20" font-weight="700">Claim boundary</text>
-<text x="85" y="425" font-size="16">Thresholds are illustrative scenarios, not observed program costs or modern L&amp;D break-even values.</text>
-<text x="85" y="453" font-size="16">Bootstrap exceedance fractions are not posterior probabilities; the label permutation is a diagnostic, not exact design reconstruction.</text>
-<text x="85" y="481" font-size="16">Transport from this historical program and population to modern corporate training requires separate evidence.</text>
+<rect x="48" y="125" width="520" height="425" rx="18" fill="#EAF6F1" stroke="#3D8B72" stroke-width="2"/>
+<text x="76" y="164" font-size="18" font-weight="700" fill="#2E6B58">SUPPORTED BY THIS REANALYSIS</text>
+<text x="76" y="212" font-size="29" font-weight="700" fill="#17324D">+$1,794.34</text>
+<text x="76" y="238" font-size="14" fill="#4A5C68">historical treated-minus-control RE78 contrast</text>
+<line x1="76" y1="265" x2="540" y2="265" stroke="#B6D8CC"/>
+<text x="76" y="302" font-size="16" font-weight="700" fill="#17324D">Uncertainty is explicit</text>
+<text x="76" y="330" font-size="14" fill="#4A5C68">Normal and bootstrap 95% intervals remain above zero</text>
+<text x="76" y="359" font-size="14" fill="#4A5C68">Permutation diagnostic p = 0.005899</text>
+<line x1="76" y1="386" x2="540" y2="386" stroke="#B6D8CC"/>
+<text x="76" y="423" font-size="16" font-weight="700" fill="#17324D">Decision sensitivity is visible</text>
+<text x="76" y="451" font-size="14" fill="#4A5C68">95% frontier: $700 · 50% frontier: $1,700</text>
+<text x="76" y="480" font-size="14" fill="#4A5C68">At $2,000, 38.18% of bootstrap effects exceed the threshold</text>
+<text x="76" y="518" font-size="13" fill="#2E6B58">Useful for asking how demanding a benefit rule can become</text>
+
+<rect x="632" y="125" width="520" height="425" rx="18" fill="#FDEEEE" stroke="#C45A4A" stroke-width="2"/>
+<text x="660" y="164" font-size="18" font-weight="700" fill="#9A3B30">STILL REQUIRED FOR A MODERN BUSINESS CASE</text>
+<text x="660" y="210" font-size="16" font-weight="700" fill="#17324D">Program economics</text>
+<text x="660" y="238" font-size="14" fill="#4A5C68">delivery cost · implementation cost · opportunity cost</text>
+<line x1="660" y1="265" x2="1124" y2="265" stroke="#EAC0BA"/>
+<text x="660" y="302" font-size="16" font-weight="700" fill="#17324D">Current valuation</text>
+<text x="660" y="330" font-size="14" fill="#4A5C68">inflation/current dollars · organizational value mapping</text>
+<line x1="660" y1="357" x2="1124" y2="357" stroke="#EAC0BA"/>
+<text x="660" y="394" font-size="16" font-weight="700" fill="#17324D">Transportability</text>
+<text x="660" y="422" font-size="14" fill="#4A5C68">modern workforce · training design · labor market context</text>
+<line x1="660" y1="449" x2="1124" y2="449" stroke="#EAC0BA"/>
+<text x="660" y="486" font-size="16" font-weight="700" fill="#17324D">Decision rule</text>
+<text x="660" y="514" font-size="14" fill="#4A5C68">validated break-even threshold or utility function</text>
+
+<rect x="48" y="583" width="1104" height="53" rx="12" fill="#EEF2F6"/>
+<text x="69" y="615" font-size="14" fill="#17324D"><tspan font-weight="700">Bottom line:</tspan> the experiment can support a historical causal contrast; the threshold curve adds sensitivity analysis, not a modern ROI verdict.</text>
 </g>
 </svg>
