@@ -3,11 +3,29 @@
 [![CI](https://github.com/devissaputra/training_evidence_decision_value/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/training_evidence_decision_value/actions/workflows/ci.yml)
 [![Empirical rebuild](https://github.com/devissaputra/training_evidence_decision_value/actions/workflows/empirical-rebuild.yml/badge.svg)](https://github.com/devissaputra/training_evidence_decision_value/actions/workflows/empirical-rebuild.yml)
 
-> **Empirical Research Bundle** · **Learning & Development Research** · Training Evaluation / Decision Analysis / Experimental Evidence
+> **Empirical Study** · **Learning & Development Research** · Training Evaluation / Decision Analysis / Experimental Evidence
 
-Secondary reanalysis of the **Dehejia–Wahba RE74 subset** of the randomized National Supported Work experiment. The study asks how the interpretation of a fixed experimental earnings effect changes when a decision maker imposes increasingly demanding **illustrative minimum-benefit thresholds**.
+Training evaluation often stops at a binary question: *did the intervention have a positive effect?* This study adds a second decision layer: *how demanding can a minimum-benefit requirement become before the evidence stops clearing it consistently?* Using the **Dehejia–Wahba RE74 subset** of the randomized National Supported Work experiment, the analysis separates the historical treatment effect from uncertainty and from the threshold scenarios used to interpret it.
 
-![Empirical workflow](assets/architecture.svg)
+That separation matters for L&D. The experiment provides a historical causal contrast for this randomized subset, while the threshold frontier shows how the same evidence behaves under increasingly demanding illustrative benefit requirements. The thresholds are deliberately not presented as program cost, current-dollar ROI, or a universal adoption rule.
+
+![Study architecture](assets/architecture.svg)
+
+## At a glance
+
+| Evidence item | Result |
+|---|---:|
+| Randomized controls | 260 |
+| Treated participants | 185 |
+| Treated − control mean RE78 | **1,794.34** |
+| Large-sample 95% interval | **479.19 to 3,109.50** |
+| Bootstrap 95% interval | **519.04 to 3,117.80** |
+| Bootstrap effect above zero | **0.9978** |
+| 50% exceedance frontier | **1,700** |
+| Exceedance above 2,000 | **0.3818** |
+| Label-permutation diagnostic | **p = 0.005899** |
+
+All monetary values are historical **1982 U.S. dollars** as defined in the source documentation.
 
 ## Research question
 
@@ -90,7 +108,7 @@ Selected diagnostics:
 
 These are **resampling frontier diagnostics**, not posterior probabilities of implementation success.
 
-![Decision frontier](assets/research_design.svg)
+![Decision-threshold evidence summary](assets/research_design.svg)
 
 ## Why the thresholds are illustrative
 
@@ -103,6 +121,12 @@ The repository does **not** contain:
 - a utility function converting earnings into organizational value.
 
 Therefore the threshold grid is a sensitivity device: it asks, *“How much of the resampled treatment-effect distribution clears a hypothetical minimum gain?”* It does not claim that 500, 2,000, or any other threshold is an economically correct adoption rule.
+
+## L&D interpretation
+
+The practical value of the analysis is not to declare a single “correct” training threshold. It is to show that **effect significance and decision sufficiency are different questions**. A historical treatment effect can be positive while support becomes progressively thinner as the minimum required benefit increases. For evidence-based L&D, that encourages a clearer sequence: estimate impact, characterize uncertainty, define the benefit requirement separately, and then inspect how robustly the evidence clears it.
+
+The study is especially useful as a template for separating **program-evaluation evidence** from **business-case assumptions**. A modern organization would still need current implementation cost, present-value conversion, workforce similarity, intervention comparability, and an explicit utility or break-even rule before using the same logic for an actual investment decision.
 
 ## What the study can claim
 
