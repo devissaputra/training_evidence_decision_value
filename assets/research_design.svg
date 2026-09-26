@@ -1,11 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500">
-<rect width="1200" height="500" fill="white"/>
-<text x="50" y="50" font-family="Arial" font-size="29" font-weight="700">Bootstrap Threshold Frontier</text>
-<text x="50" y="78" font-family="Arial" font-size="15">Illustrative minimum RE78 gain thresholds in historical 1982 U.S. dollars</text>
-<line x1="100" y1="400" x2="1100" y2="400" stroke="#222"/><line x1="100" y1="100" x2="100" y2="400" stroke="#222"/>
-<polyline points="100.0,100.7 125.0,101.6 150.0,102.3 175.0,103.1 200.0,104.4 225.0,106.8 250.0,110.5 275.0,114.6 300.0,119.4 325.0,126.0 350.0,133.7 375.0,143.1 400.0,155.4 425.0,168.8 450.0,182.2 475.0,199.2 500.0,216.2 525.0,233.9 550.0,252.5 575.0,268.2 600.0,285.5 625.0,300.7 650.0,315.8 675.0,330.4 700.0,342.7 725.0,354.1 750.0,365.0 775.0,372.3 800.0,379.0 825.0,385.0 850.0,389.0 875.0,392.1 900.0,394.5 925.0,396.3 950.0,397.5 975.0,398.0 1000.0,398.6 1025.0,399.0 1050.0,399.4 1075.0,399.6 1100.0,399.8" fill="none" stroke="#333" stroke-width="3"/>
-<text x="600" y="455" text-anchor="middle" font-family="Arial" font-size="15">Minimum-gain threshold (1982 U.S. dollars)</text>
-<text x="28" y="250" transform="rotate(-90 28 250)" text-anchor="middle" font-family="Arial" font-size="15">Bootstrap exceedance fraction</text>
-<text x="100" y="420" font-family="Arial" font-size="12">0</text><text x="1060" y="420" font-family="Arial" font-size="12">4,000</text>
-<text x="65" y="405" font-family="Arial" font-size="12">0.0</text><text x="65" y="105" font-family="Arial" font-size="12">1.0</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect width="1200" height="675" fill="#F7FAFC"/>
+<rect x="0" y="0" width="1200" height="92" fill="#17324D"/>
+<text x="52" y="42" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">Decision Value of Training Evidence</text>
+<text x="52" y="70" font-family="Arial, sans-serif" font-size="16" fill="#D8E7F2">National Supported Work · randomized historical benchmark · RE78 in 1982 U.S. dollars</text>
+
+<rect x="45" y="120" width="250" height="130" rx="16" fill="#E8F3F8" stroke="#2F6F8F" stroke-width="2"/>
+<text x="66" y="150" font-family="Arial" font-size="15" font-weight="700" fill="#214E68">EXPERIMENTAL SAMPLE</text>
+<text x="66" y="188" font-family="Arial" font-size="32" font-weight="700" fill="#17324D">185 treated</text>
+<text x="66" y="222" font-family="Arial" font-size="25" fill="#17324D">260 controls</text>
+
+<rect x="318" y="120" width="310" height="130" rx="16" fill="#EAF6F1" stroke="#3D8B72" stroke-width="2"/>
+<text x="340" y="150" font-family="Arial" font-size="15" font-weight="700" fill="#2E6B58">OBSERVED EFFECT</text>
+<text x="340" y="194" font-family="Arial" font-size="38" font-weight="700" fill="#17324D">+$1,794.34</text>
+<text x="340" y="225" font-family="Arial" font-size="15" fill="#4A5C68">treated − control mean RE78</text>
+
+<rect x="650" y="120" width="505" height="130" rx="16" fill="#FFF5E8" stroke="#D88B31" stroke-width="2"/>
+<text x="674" y="150" font-family="Arial" font-size="15" font-weight="700" fill="#9A5A15">UNCERTAINTY</text>
+<text x="674" y="184" font-family="Arial" font-size="19" font-weight="700" fill="#17324D">Normal 95%: $479 to $3,110</text>
+<text x="674" y="215" font-family="Arial" font-size="19" font-weight="700" fill="#17324D">Bootstrap 95%: $519 to $3,118</text>
+<text x="1004" y="198" font-family="Arial" font-size="16" fill="#4A5C68">p = 0.0059</text>
+
+<text x="48" y="296" font-family="Arial" font-size="20" font-weight="700" fill="#17324D">Bootstrap threshold frontier</text>
+<text x="48" y="321" font-family="Arial" font-size="14" fill="#566A78">Fraction of 5,000 resamples whose treated-minus-control difference clears an illustrative minimum-gain threshold</text>
+
+<line x1="105" y1="545" x2="1110" y2="545" stroke="#8294A3" stroke-width="1.5"/>
+<line x1="105" y1="350" x2="105" y2="545" stroke="#8294A3" stroke-width="1.5"/>
+<line x1="105" y1="447" x2="1110" y2="447" stroke="#C9D4DC" stroke-dasharray="6 7"/>
+<text x="58" y="452" font-family="Arial" font-size="12" fill="#657783">0.50</text>
+<text x="72" y="354" font-family="Arial" font-size="12" fill="#657783">1.0</text>
+<text x="78" y="550" font-family="Arial" font-size="12" fill="#657783">0</text>
+
+<polyline points="105,350 130,351 155,352 180,353 205,354 230,356 255,358 280,360 305,363 330,367 355,372 380,378 405,386 430,395 455,404 480,415 505,426 530,438 555,450 580,460 605,471 630,481 655,490 680,500 705,508 730,516 755,523 780,528 805,532 830,535 855,538 880,540 905,542 930,543 955,544 980,544.5 1005,545 1030,545 1055,545 1080,545 1110,545" fill="none" stroke="#2563A5" stroke-width="5" stroke-linecap="round"/>
+
+<circle cx="280" cy="360" r="6" fill="#3D8B72"/><text x="247" y="341" font-family="Arial" font-size="13" font-weight="700" fill="#2E6B58">$700 → 95%</text>
+<circle cx="405" cy="386" r="6" fill="#3D8B72"/><text x="372" y="367" font-family="Arial" font-size="13" font-weight="700" fill="#2E6B58">$1,200 → 82%</text>
+<circle cx="530" cy="438" r="7" fill="#D88B31"/><text x="492" y="421" font-family="Arial" font-size="13" font-weight="700" fill="#9A5A15">$1,700 → 55%</text>
+<circle cx="605" cy="471" r="7" fill="#C45A4A"/><text x="570" y="495" font-family="Arial" font-size="13" font-weight="700" fill="#9A3B30">$2,000 → 38%</text>
+<circle cx="830" cy="535" r="6" fill="#C45A4A"/><text x="790" y="518" font-family="Arial" font-size="13" font-weight="700" fill="#9A3B30">$2,900 → 5%</text>
+
+<text x="100" y="568" font-family="Arial" font-size="12" fill="#657783">$0</text>
+<text x="572" y="568" font-family="Arial" font-size="12" fill="#657783">$2,000</text>
+<text x="1060" y="568" font-family="Arial" font-size="12" fill="#657783">$4,000</text>
+
+<rect x="45" y="595" width="1110" height="52" rx="12" fill="#EEF2F6"/>
+<text x="65" y="618" font-family="Arial" font-size="14" font-weight="700" fill="#17324D">Interpretation boundary:</text>
+<text x="218" y="618" font-family="Arial" font-size="14" fill="#445865">the curve is threshold sensitivity, not ROI, current-dollar value, or probability that a modern training program will succeed.</text>
+<text x="65" y="638" font-family="Arial" font-size="12" fill="#657783">Source: Dehejia–Wahba RE74 experimental subset · historical earnings benchmark</text>
 </svg>
